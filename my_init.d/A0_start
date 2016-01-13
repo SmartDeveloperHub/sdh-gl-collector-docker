@@ -1,0 +1,4 @@
+#!/bin/sh
+/usr/lib/glcollector/.env/bin/pip install gl-collector
+/usr/lib/glcollector/.env/bin/python /usr/lib/glcollector/.env/bin/collector &
+sleep 1
