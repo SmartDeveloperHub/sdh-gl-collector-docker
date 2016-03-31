@@ -1,4 +1,10 @@
 #!/bin/sh
-/usr/lib/glcollector/.env/bin/pip install gl-collector
-/usr/lib/glcollector/.env/bin/python /usr/lib/glcollector/.env/bin/collector &
+rm -rf /opt && mkdir /opt
+git clone https://github.com/SmartDeveloperHub/gitlab-collector.git collector
+cd collector && git checkout develop
+source /usr/lib/glcollector/.env/bin/activate
+pip install https://github.com/mitsuhiko/flask/tarball/master
+python setup.py install
+python mgitcollector &
 sleep 1
+tail -f /var/log/git-collector.log
