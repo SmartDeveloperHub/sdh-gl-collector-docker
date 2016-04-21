@@ -13,4 +13,6 @@ ONBUILD ./my_init.d/ /etc/my_init.d/
 
 CMD ["/sbin/my_init"]
 
+EXPOSE 5000
+
 VOLUME ["/usr/lib/glcollector"]
